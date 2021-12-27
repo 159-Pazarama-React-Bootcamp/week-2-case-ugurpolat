@@ -39,7 +39,6 @@ class UI {
   }
 
   static loadAllToDos(todos) {
-    console.log(typeof todos);
     todos.forEach((todo) => {
       this.createElement(todo);
     });

@@ -4,7 +4,7 @@ const addButton = document.querySelector(".btn-add");
 const section = document.getElementById("section-list");
 const deleteAll = document.querySelector(".delete-all");
 const request = new Request();
-let id = 1;
+let id_number = 1;
 let todos = [];
 eventListeners();
 
@@ -41,13 +41,21 @@ function addTodo(e) {
   if (todo === "") {
     UI.displayMessage("Please, write your todo", "error");
   } else {
-    const newTodo = new Todo(id, todo);
+    const newTodo = new Todo(id_number, todo);
 
     Storage.addToDotoStorage(newTodo);
 
+    request
+      .post("https://61c58dd1c003e70017b79794.mockapi.io/api/todos", {
+        id: `${id_number}`,
+        todoText: `${todo}`,
+      })
+      .then((newTodo) => console.log(newTodo))
+      .catch((err) => console.log(err));
+
     UI.addToDotoUI(newTodo);
     UI.displayMessage("Successfully added", "success");
-    id++;
+    id_number++;
   }
   UI.clearInputs(todoElement);
   e.preventDefault();

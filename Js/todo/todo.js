@@ -1,6 +1,6 @@
 class Todo {
-  constructor(id, text) {
+  constructor(id, todoText) {
     this.id = id;
-    this.text = text;
+    this.todoText = todoText;
   }
 }
