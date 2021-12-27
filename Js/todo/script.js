@@ -93,20 +93,20 @@ function addTodo(e) {
 
 function deleteTodo(e) {
   if (e.target.className === "fas fa-trash-alt") {
-    UI.deleteToDoFromUI(e.target.parentElement.parentElement);
     let id_number = e.target.parentElement.parentElement.parentElement.id;
+    UI.deleteToDoFromUI(e.target.parentElement.parentElement.parentElement);
 
     request
       .delete(
         `https://61c58dd1c003e70017b79794.mockapi.io/api/todos/${id_number}`
       )
-      .then((message) => console.log(message))
+      .then()
       .catch((err) => console.log(err));
 
     Storage.deleteToDoFromStorage(
-      e.target.parentElement.parentElement.parentElement
+      e.target.parentElement.parentElement.parentElement.textContent
     );
-    console.log(e.target.parentElement.parentElement.parentElement);
+
     UI.displayMessage("Successful delete", "success");
   }
 }

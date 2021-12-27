@@ -22,7 +22,7 @@ class Storage {
     let todos = this.getToDosFromStorage();
 
     todos.forEach(function (todo, index) {
-      if (todo.text === targetTodo.trim()) {
+      if (todo.todoText === targetTodo.trim()) {
         todos.splice(index, 1);
       }
     });
