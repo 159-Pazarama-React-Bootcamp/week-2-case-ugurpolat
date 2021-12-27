@@ -57,8 +57,9 @@ li {
 .delete-todo {
   color: red;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
   padding: 0 2%;
   color: white;
   background-color: black;
@@ -115,7 +116,14 @@ li {
   right: 0;
   color: var(--on-background);
 }
-
+.todo-options {
+  padding-left: 10px;
+  display: flex;
+  background-color: black;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
 .theme-switch {
   display: inline-block;
   height: 34px;

@@ -33,4 +33,17 @@ class Storage {
   static clearAllToDoFromStorage() {
     localStorage.removeItem("todos");
   }
+
+  static updateToDotoStorage(updatedTodo) {
+    let todos = this.getToDosFromStorage();
+
+    let update_id = updatedTodo.id;
+    // let update_text = updatedTodo.text;
+
+    todos.forEach((todo) => {
+      if (todo.id == update_id) {
+        localStorage.setItem("todos", JSON.stringify(updatedTodo));
+      }
+    });
+  }
 }
