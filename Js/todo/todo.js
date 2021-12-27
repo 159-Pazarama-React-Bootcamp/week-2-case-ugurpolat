@@ -1,9 +1,6 @@
-// function Todo(text) {
-//   this.text = text;
-// }
-
 class Todo {
-  constructor(text) {
+  constructor(id, text) {
+    this.id = id;
     this.text = text;
   }
 }

@@ -142,7 +142,7 @@ const request = new Request();
 //   .then((album) => console.log(album))
 //   .catch((err) => console.log(err));
 
-request
-  .delete("https://61c58dd1c003e70017b79794.mockapi.io/api/todos/1")
-  .then((message) => console.log(message))
-  .catch((err) => console.log(err));
+// request
+//   .delete("https://61c58dd1c003e70017b79794.mockapi.io/api/todos/1")
+//   .then((message) => console.log(message))
+//   .catch((err) => console.log(err));

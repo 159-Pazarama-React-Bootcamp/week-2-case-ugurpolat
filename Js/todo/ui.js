@@ -6,7 +6,8 @@ class UI {
     const a = document.createElement("a");
     const i = document.createElement("i");
 
-    li.textContent = newElement.text;
+    li.id = newElement.id;
+    li.textContent = newElement.todoText;
     a.className = "delete-todo";
     a.href = "#";
     i.className = "fas fa-trash-alt";
@@ -38,6 +39,7 @@ class UI {
   }
 
   static loadAllToDos(todos) {
+    console.log(typeof todos);
     todos.forEach((todo) => {
       this.createElement(todo);
     });
